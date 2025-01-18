@@ -3,15 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>happy birthday chat </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h1 {
+            color: #ff6347;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1> HAPPYBIRTHDAY !!!???1?1?!1! </h1>
-        <p> couldnt make zibble.</p>
-        <img src="https://source.unsplash.com/500x300/?birthday,celebration" alt="Birthday Celebration">
-        <p class="footer"> thank you for reading god🙏🙏</p>
+    <div id="password-form">
+        <h1>Enter the Password</h1>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" style="color: red; display: none;">Wrong password. Try again.</p>
     </div>
+
+    <div id="content" class="hidden">
+        <h1>HAPPY BIRTHDAY!!! 🎉</h1>
+        <p>Couldn't make Zibble, but here's a surprise page!</p>
+        <img src="https://source.unsplash.com/400x300/?birthday,cake" alt="Birthday">
+        <p class="footer">😳😳😳</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            const content = document.getElementById('content');
+            const passwordForm = document.getElementById('password-form');
+            const correctPassword = "zal";
+
+            if (password === correctPassword) {
+                passwordForm.style.display = "none";
+                content.classList.remove("hidden");
+            } else {
+                errorMessage.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>

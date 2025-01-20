@@ -56,7 +56,31 @@
             } else {
                 errorMessage.style.display = "block";
             }
-        }
-    </script>
+
+<img id="cake" src="IMG_3014.jpeg" alt="Birthday Cake">
+
+
+  <p id="message">🎉🎉🎉🎂🎂</p>
+
+  <script>
+    // JavaScript to make the cake "edible"
+    let bites = 0; // Tracks how many bites are taken
+    const cake = document.getElementById("cake");
+    const message = document.getElementById("message");
+
+    cake.addEventListener("click", () => {
+      bites++;
+      if (bites === 1) {
+        cake.style.opacity = 0.7; // First bite, cake starts disappearing
+        message.textContent = "yum.";
+      } else if (bites === 2) {
+        cake.style.opacity = 0.4; // Second bite, cake almost gone
+        message.textContent = "its almost done.";
+      } else if (bites >= 3) {
+        cake.style.display = "none"; // Third bite, cake disappears
+        message.textContent = "okay. Its time for presents";
+      }
+    });
+  </script>
 </body>
 </html>
